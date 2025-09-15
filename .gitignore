@@ -1,0 +1,11 @@
+# macOS 系统文件
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 缩略图
+._*
+
+# macOS 文件系统属性存档
+.Spotlight-V100
+.Trashes
