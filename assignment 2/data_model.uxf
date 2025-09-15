@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>5</x><y>100</y><w>210</w><h>120</h></coordinates><panel_attributes>Photographer
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>195</x><y>50</y><w>210</w><h>120</h></coordinates><panel_attributes>Photographer
 --
 +photographerID:long
 +name:String
@@ -7,7 +7,7 @@
 --
 
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>255</x><y>100</y><w>210</w><h>150</h></coordinates><panel_attributes>Session
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>645</x><y>70</y><w>210</w><h>150</h></coordinates><panel_attributes>Session
 --
 +sessionID:long
 +photographerID:long
@@ -15,29 +15,29 @@
 +price:float
 +durationMinutes:int
 +description:String
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>5</x><y>270</y><w>210</w><h>120</h></coordinates><panel_attributes>Photo
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>175</x><y>350</y><w>210</w><h>120</h></coordinates><panel_attributes>Photo
 --
 +photoID:long
 +photographerID:long
 +title:String
 +imageURL:String
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>235</x><y>280</y><w>210</w><h>100</h></coordinates><panel_attributes>Category/Style
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>535</x><y>370</y><w>210</w><h>100</h></coordinates><panel_attributes>Category/Style
 --
 +categoryID:long
 +name:String
 +description:String
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>280</y><w>210</w><h>80</h></coordinates><panel_attributes>PhotoCategory
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>955</x><y>270</y><w>210</w><h>80</h></coordinates><panel_attributes>PhotoCategory
 --
 +photoID:long
 +categoryID:long
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>5</x><y>420</y><w>210</w><h>130</h></coordinates><panel_attributes>User
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>65</x><y>590</y><w>210</w><h>130</h></coordinates><panel_attributes>User
 --
 +userID:long
 +name:String
 +email:String
 +phone:String
 +address:String
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>235</x><y>420</y><w>210</w><h>170</h></coordinates><panel_attributes>Order
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>615</x><y>540</y><w>210</w><h>170</h></coordinates><panel_attributes>Order
 --
 +orderID:long
 +userID:long
@@ -47,7 +47,7 @@
 +location:String
 +quantity:long
 +status:String
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>465</x><y>420</y><w>210</w><h>150</h></coordinates><panel_attributes>Payment
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>965</x><y>570</y><w>210</w><h>150</h></coordinates><panel_attributes>Payment
 --
 +paymentID:long
 +order:long

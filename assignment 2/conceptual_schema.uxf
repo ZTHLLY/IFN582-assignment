@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>8</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>0</x><y>24</y><w>168</w><h>168</h></coordinates><panel_attributes>Photographer
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>560</x><y>182</y><w>147</w><h>147</h></coordinates><panel_attributes>Photographer
 --
 PhotographerID:long
 name:String
@@ -12,7 +12,7 @@ phone:String
 --
 updateProfile()
 manageSession()
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>40</y><w>168</w><h>104</h></coordinates><panel_attributes>Photo
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>238</x><y>196</y><w>147</w><h>91</h></coordinates><panel_attributes>Photo
 --
 photoID:long
 style:String
@@ -20,16 +20,13 @@ imageURL:String
 description:String
 title:String
 --
-display()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>80</y><w>136</w><h>40</h></coordinates><panel_attributes>lt=-
-m1=0..n
-m2=1
-upload &gt;</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>304</y><w>168</w><h>72</h></coordinates><panel_attributes>Session
+display()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>483</y><w>147</w><h>63</h></coordinates><panel_attributes>Session
 --
 sessiongID:long
 sessionTime:datetime
 price:float
 type:String
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>288</x><y>424</y><w>168</w><h>128</h></coordinates><panel_attributes>Client
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>840</x><y>637</y><w>147</w><h>112</h></coordinates><panel_attributes>Client
 --
 clientID:long
 name:String
@@ -41,21 +38,18 @@ phone:String
 bookSession()
 updateInfo()
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>456</y><w>168</w><h>64</h></coordinates><panel_attributes>Booking
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>665</y><w>147</w><h>56</h></coordinates><panel_attributes>Booking
 --
 bookingID:long
 status:enum
 paymentInfo
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>472</y><w>144</w><h>40</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>700</x><y>679</y><w>154</w><h>35</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=0..n
-&lt;create</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>Relation</id><coordinates><x>72</x><y>368</y><w>48</w><h>104</h></coordinates><panel_attributes>lt=-
-m1=1
-m2=0..n
-has&gt;</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>72</x><y>184</y><w>72</w><h>136</h></coordinates><panel_attributes>lt=-
+&lt;create</panel_attributes><additional_attributes>10;20;200;20</additional_attributes></element><element><id>Relation</id><coordinates><x>623</x><y>322</y><w>63</w><h>175</h></coordinates><panel_attributes>lt=-
 m1=0..n
 m2=1
-provide &gt;</panel_attributes><additional_attributes>10;10;10;150</additional_attributes></element><element><id>UMLClass</id><coordinates><x>264</x><y>216</y><w>168</w><h>128</h></coordinates><panel_attributes>Payment
+provide &gt;</panel_attributes><additional_attributes>10;10;10;230</additional_attributes></element><element><id>UMLClass</id><coordinates><x>840</x><y>427</y><w>147</w><h>112</h></coordinates><panel_attributes>Payment
 --
 + paymentId: String
 + bookingId: String
@@ -63,16 +57,35 @@ provide &gt;</panel_attributes><additional_attributes>10;10;10;150</additional_a
 + amount: Decimal
 + currency: String
 + paidAt: DateTime
-+ status: Enum</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>512</x><y>32</y><w>128</w><h>96</h></coordinates><panel_attributes>Style
++ status: Enum</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>238</x><y>357</y><w>147</w><h>56</h></coordinates><panel_attributes>Style
 --
 + styleId: String
-+ name: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>520</x><y>208</y><w>128</w><h>96</h></coordinates><panel_attributes>Category
++ name: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>238</x><y>476</y><w>147</w><h>84</h></coordinates><panel_attributes>Category
 --
 + categoryId: String
-+ name: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>504</x><y>376</y><w>144</w><h>112</h></coordinates><panel_attributes>Review
++ name: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>231</x><y>658</y><w>147</w><h>77</h></coordinates><panel_attributes>Review
 --
 + reviewId: String
 + bookingId: String
 + rating: Int
 + comment: String
-+ createdAt: DateTime</panel_attributes><additional_attributes></additional_attributes></element></diagram>
++ createdAt: DateTime</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>301</x><y>280</y><w>42</w><h>91</h></coordinates><panel_attributes>lt=-
+m1=1..n
+m2=0..n
+has &gt;</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>112</x><y>224</y><w>140</w><h>315</h></coordinates><panel_attributes>lt=-
+m1=1..n
+m2=0..n
+has</panel_attributes><additional_attributes>180;10;10;10;10;420;180;420</additional_attributes></element><element><id>Relation</id><coordinates><x>378</x><y>504</y><w>196</w><h>35</h></coordinates><panel_attributes>lt=-
+m1=1..n
+m2=0..n
+&lt; has</panel_attributes><additional_attributes>260;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>378</x><y>378</y><w>196</w><h>133</h></coordinates><panel_attributes>lt=-
+m1=1..n
+m2=0..n
+&lt; has</panel_attributes><additional_attributes>260;160;180;160;180;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>728</y><w>665</w><h>133</h></coordinates><panel_attributes>lt=-
+m1=0..n
+m2=1
+&lt; create</panel_attributes><additional_attributes>910;30;910;170;10;170;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>665</x><y>532</y><w>266</w><h>147</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>360;10;360;100;10;100;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>371</x><y>693</y><w>203</w><h>21</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;270;10</additional_attributes></element><element><id>Relation</id><coordinates><x>301</x><y>539</y><w>308</w><h>133</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;170;10;90;420;90;420;10</additional_attributes></element><element><id>Relation</id><coordinates><x>378</x><y>238</y><w>196</w><h>28</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>10;20;260;20</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>539</y><w>35</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=0..n
+m1=1
+</panel_attributes><additional_attributes>10;180;10;10</additional_attributes></element></diagram>
