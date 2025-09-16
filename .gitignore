@@ -1,11 +1,13 @@
-# macOS 系统文件
+# macOS sys file
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# 缩略图
 ._*
 
-# macOS 文件系统属性存档
+# macOS sys file
 .Spotlight-V100
 .Trashes
+
+# git files
+.git
+.gitignore

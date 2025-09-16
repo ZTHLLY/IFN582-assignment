@@ -1,65 +1,38 @@
-<umlet_diagram>
-  <diagram_name>Data Model - Photography Studio (3NF, Full FKs)</diagram_name>
-  <zoom_level>10</zoom_level>
-
-  <!-- ===== Tables ===== -->
-  <element><id>UMLClass</id><coordinates><x>40</x><y>40</y><w>260</w><h>200</h></coordinates>
-    <panel_attributes>users
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><element><id>UMLClass</id><coordinates><x>36</x><y>81</y><w>234</w><h>180</h></coordinates><panel_attributes>users
 --
 PK user_id: VARCHAR
 name: VARCHAR
 email: VARCHAR (UNIQUE)
 phone: VARCHAR
 role: VARCHAR [CLIENT|PHOTOGRAPHER|ADMIN]
-created_at: TIMESTAMP</panel_attributes></element>
-
-  <element><id>UMLClass</id><coordinates><x>340</x><y>40</y><w>260</w><h>170</h></coordinates>
-    <panel_attributes>photographers
+created_at: TIMESTAMP</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>306</x><y>81</y><w>234</w><h>153</h></coordinates><panel_attributes>photographers
 --
 PK photographer_id: VARCHAR
 FK user_id: VARCHAR → users.user_id
 bio: TEXT
 location: VARCHAR
-rating: DECIMAL(2,1)</panel_attributes></element>
-
-  <element><id>UMLClass</id><coordinates><x>640</x><y>40</y><w>240</w><h>200</h></coordinates>
-    <panel_attributes>photos
+rating: DECIMAL(2,1)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>576</x><y>81</y><w>216</w><h>180</h></coordinates><panel_attributes>photos
 --
 PK photo_id: VARCHAR
 FK photographer_id: VARCHAR → photographers.photographer_id
 title: VARCHAR
 url: VARCHAR
 description: TEXT
-uploaded_at: TIMESTAMP</panel_attributes></element>
-
-  <element><id>UMLClass</id><coordinates><x>920</x><y>40</y><w>200</w><h>140</h></coordinates>
-    <panel_attributes>styles
+uploaded_at: TIMESTAMP</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>828</x><y>81</y><w>180</w><h>126</h></coordinates><panel_attributes>styles
 --
 PK style_id: VARCHAR
-name: VARCHAR (UNIQUE)</panel_attributes></element>
-
-  <element><id>UMLClass</id><coordinates><x>920</x><y>220</y><w>200</w><h>140</h></coordinates>
-    <panel_attributes>categories
+name: VARCHAR (UNIQUE)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>828</x><y>243</y><w>180</w><h>126</h></coordinates><panel_attributes>categories
 --
 PK category_id: VARCHAR
-name: VARCHAR (UNIQUE)</panel_attributes></element>
-
-  <element><id>UMLClass</id><coordinates><x>640</x><y>260</y><w>240</w><h>160</h></coordinates>
-    <panel_attributes>photo_styles
+name: VARCHAR (UNIQUE)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>576</x><y>279</y><w>216</w><h>144</h></coordinates><panel_attributes>photo_styles
 --
 PK (photo_id, style_id)
 FK photo_id: VARCHAR → photos.photo_id
-FK style_id: VARCHAR → styles.style_id</panel_attributes></element>
-
-  <element><id>UMLClass</id><coordinates><x>920</x><y>380</y><w>240</w><h>160</h></coordinates>
-    <panel_attributes>photo_categories
+FK style_id: VARCHAR → styles.style_id</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>828</x><y>387</y><w>216</w><h>144</h></coordinates><panel_attributes>photo_categories
 --
 PK (photo_id, category_id)
 FK photo_id: VARCHAR → photos.photo_id
-FK category_id: VARCHAR → categories.category_id</panel_attributes></element>
-
-  <element><id>UMLClass</id><coordinates><x>40</x><y>280</y><w>300</w><h>230</h></coordinates>
-    <panel_attributes>session_types
+FK category_id: VARCHAR → categories.category_id</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>36</x><y>297</y><w>270</w><h>207</h></coordinates><panel_attributes>session_types
 --
 PK session_id: VARCHAR
 FK photographer_id: VARCHAR → photographers.photographer_id
@@ -67,10 +40,7 @@ name: VARCHAR
 description: TEXT
 base_price: DECIMAL(10,2)
 duration_minutes: INT
-max_people: INT</panel_attributes></element>
-
-  <element><id>UMLClass</id><coordinates><x>360</x><y>260</y><w>280</w><h>250</h></coordinates>
-    <panel_attributes>bookings
+max_people: INT</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>324</x><y>279</y><w>252</w><h>225</h></coordinates><panel_attributes>bookings
 --
 PK booking_id: VARCHAR
 FK user_id: VARCHAR → users.user_id
@@ -79,10 +49,7 @@ FK session_id: VARCHAR → session_types.session_id
 scheduled_at: TIMESTAMP
 address: VARCHAR
 status: VARCHAR [PENDING|CONFIRMED|CANCELLED|COMPLETED]
-created_at: TIMESTAMP</panel_attributes></element>
-
-  <element><id>UMLClass</id><coordinates><x>660</x><y>460</y><w>280</w><h>220</h></coordinates>
-    <panel_attributes>payments
+created_at: TIMESTAMP</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>594</x><y>459</y><w>252</w><h>198</h></coordinates><panel_attributes>payments
 --
 PK payment_id: VARCHAR
 FK booking_id: VARCHAR → bookings.booking_id
@@ -90,107 +57,50 @@ method: VARCHAR [CARD|PAYPAL|BANK]
 amount: DECIMAL(10,2)
 currency: VARCHAR(3)
 paid_at: TIMESTAMP NULL
-status: VARCHAR [INITIATED|PAID|FAILED|REFUNDED]</panel_attributes></element>
-
-  <element><id>UMLClass</id><coordinates><x>980</x><y>540</y><w>260</w><h>200</h></coordinates>
-    <panel_attributes>reviews
+status: VARCHAR [INITIATED|PAID|FAILED|REFUNDED]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>882</x><y>531</y><w>234</w><h>180</h></coordinates><panel_attributes>reviews
 --
 PK review_id: VARCHAR
 FK booking_id: VARCHAR → bookings.booking_id
 rating: INT CHECK 1..5
 comment: TEXT
-created_at: TIMESTAMP</panel_attributes></element>
-
-  <!-- ===== FK Relations with multiplicities (for clarity) ===== -->
-
-  <!-- users 1 —— * bookings -->
-  <element><id>Relation</id><coordinates><x>280</x><y>320</y><w>100</w><h>40</h></coordinates>
-    <panel_attributes>lt=-
+created_at: TIMESTAMP</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>495</x><y>603</y><w>99</w><h>45</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=*
 role1=users
-role2=bookings</panel_attributes>
-    <additional_attributes>280;320;360;320</additional_attributes></element>
-
-  <!-- photographers 1 —— * bookings -->
-  <element><id>Relation</id><coordinates><x>500</x><y>320</y><w>60</w><h>20</h></coordinates>
-    <panel_attributes>lt=-
+role2=bookings</panel_attributes><additional_attributes>10;20;90;20</additional_attributes></element><element><id>Relation</id><coordinates><x>873</x><y>603</y><w>117</w><h>45</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=*
 role1=photographers
-role2=bookings</panel_attributes>
-    <additional_attributes>500;320;560;320</additional_attributes></element>
-
-  <!-- session_types 1 —— * bookings -->
-  <element><id>Relation</id><coordinates><x>320</x><y>340</y><w>60</w><h>20</h></coordinates>
-    <panel_attributes>lt=-
+role2=bookings</panel_attributes><additional_attributes>30;20;90;20</additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>639</y><w>117</w><h>45</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=*
 role1=session_types
-role2=bookings</panel_attributes>
-    <additional_attributes>320;340;360;340</additional_attributes></element>
-
-  <!-- photographers 1 —— * photos -->
-  <element><id>Relation</id><coordinates><x>580</x><y>120</y><w>60</w><h>20</h></coordinates>
-    <panel_attributes>lt=-
+role2=bookings</panel_attributes><additional_attributes>40;20;80;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1017</x><y>243</y><w>117</w><h>45</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=*
 role1=photographers
-role2=photos</panel_attributes>
-    <additional_attributes>580;120;640;120</additional_attributes></element>
-
-  <!-- photos * —— * styles (via photo_styles) -->
-  <element><id>Relation</id><coordinates><x>860</x><y>100</y><w>60</w><h>20</h></coordinates>
-    <panel_attributes>lt=-
+role2=photos</panel_attributes><additional_attributes>30;20;90;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1539</x><y>207</y><w>81</w><h>45</h></coordinates><panel_attributes>lt=-
 m1=*
 m2=*
 role1=photos
-role2=styles</panel_attributes>
-    <additional_attributes>860;100;920;100</additional_attributes></element>
-
-  <!-- photos * —— * categories (via photo_categories) -->
-  <element><id>Relation</id><coordinates><x>860</x><y>240</y><w>60</w><h>20</h></coordinates>
-    <panel_attributes>lt=-
+role2=styles</panel_attributes><additional_attributes>10;20;70;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1530</x><y>468</y><w>99</w><h>45</h></coordinates><panel_attributes>lt=-
 m1=*
 m2=*
 role1=photos
-role2=categories</panel_attributes>
-    <additional_attributes>860;240;920;260</additional_attributes></element>
-
-  <!-- photographers 1 —— * session_types -->
-  <element><id>Relation</id><coordinates><x>300</x><y>210</y><w>60</w><h>60</h></coordinates>
-    <panel_attributes>lt=-
+role2=categories</panel_attributes><additional_attributes>20;10;80;30</additional_attributes></element><element><id>Relation</id><coordinates><x>531</x><y>414</y><w>135</w><h>90</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=*
 role1=photographers
-role2=session_types</panel_attributes>
-    <additional_attributes>300;210;300;280</additional_attributes></element>
-
-  <!-- bookings 1 —— 0..1 payments -->
-  <element><id>Relation</id><coordinates><x>620</x><y>520</y><w>60</w><h>20</h></coordinates>
-    <panel_attributes>lt=-
+role2=session_types</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>1089</x><y>963</y><w>99</w><h>45</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=0..1
 role1=bookings
-role2=payments</panel_attributes>
-    <additional_attributes>620;520;660;520</additional_attributes></element>
-
-  <!-- bookings 1 —— 0..1 reviews -->
-  <element><id>Relation</id><coordinates><x>920</x><y>600</y><w>60</w><h>20</h></coordinates>
-    <panel_attributes>lt=-
+role2=payments</panel_attributes><additional_attributes>30;20;70;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1638</x><y>1107</y><w>99</w><h>45</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=0..1
 role1=bookings
-role2=reviews</panel_attributes>
-    <additional_attributes>920;600;980;600</additional_attributes></element>
-
-  <!-- users 1 —— 0..1 photographers (account-profile link) -->
-  <element><id>Relation</id><coordinates><x>300</x><y>100</y><w>60</w><h>20</h></coordinates>
-    <panel_attributes>lt=-
+role2=reviews</panel_attributes><additional_attributes>20;20;80;20</additional_attributes></element><element><id>Relation</id><coordinates><x>504</x><y>207</y><w>117</w><h>45</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=0..1
 role1=users
-role2=photographers</panel_attributes>
-    <additional_attributes>300;100;340;100</additional_attributes></element>
-
-</umlet_diagram>
+role2=photographers</panel_attributes><additional_attributes>40;20;80;20</additional_attributes></element></diagram>
