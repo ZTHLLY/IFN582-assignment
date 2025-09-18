@@ -1,70 +1,136 @@
-<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>459</x><y>46</y><w>189</w><h>108</h></coordinates><panel_attributes>Photographer
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>756</x><y>450</y><w>153</w><h>99</h></coordinates><panel_attributes>Photographer
 --
-+userID:long
++userId (FK):long
 +description:String
-+Location:String
++location:String
++portfolio_url:String
 --
 
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>99</x><y>271</y><w>189</w><h>153</h></coordinates><panel_attributes>Session
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>369</x><y>414</y><w>189</w><h>162</h></coordinates><panel_attributes>Session
 --
-+sessionID:long
-+photographerID:long
-+bookingID:long
++sessionId (PK):long
++photographerId (FK):long
 +title:String
++image_url:String
++location:String
 +price:float
++description:String
 +startTime:datetime
 +endTime:datetime
-+description:String
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>828</x><y>271</y><w>189</w><h>108</h></coordinates><panel_attributes>Photo
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1098</x><y>441</y><w>189</w><h>117</h></coordinates><panel_attributes>Photo
 --
-+photoID:long
-+photographerID:long
++photoId (PK):long
++photographerId (FK):long
 +title:String
 +imageURL:String
 +description:String
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>468</x><y>298</y><w>189</w><h>90</h></coordinates><panel_attributes>Tag
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1233</x><y>270</y><w>189</w><h>72</h></coordinates><panel_attributes>Photo_category
 --
-+ id
-+categoryID:long
-+name:String
-+description:String
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>828</x><y>523</y><w>189</w><h>72</h></coordinates><panel_attributes>Photo_tag
++photoId (FK):long
++categoryId (FK):long
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>738</x><y>675</y><w>189</w><h>153</h></coordinates><panel_attributes>User
 --
-+photoID:long
-+categoryID:long
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>459</x><y>811</y><w>189</w><h>153</h></coordinates><panel_attributes>User
---
-+userID:long
++userId (PK):long
 +name:String
 +email:String
 +phone:String
-+address:String
++avatar_url:String
 +role:ENUM
-+create_time
-+update_time
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>468</x><y>523</y><w>189</w><h>189</h></coordinates><panel_attributes>Booking
++create_time:datetime
++update_time:datetime</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>693</y><w>189</w><h>135</h></coordinates><panel_attributes>Booking
 --
-+ID:long
-+userID:long
-+photographerID:long
++bookingId (PK):long
++userId (FK):long
 +sessionID:long
-+createTime:datetime
-+updateTime:datetime
-+sessionTime:datetime
-+location:String
-+quantity:long
-+status:String
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>81</x><y>811</y><w>189</w><h>135</h></coordinates><panel_attributes>Payment
++quantity:ing
++status:Enum
++startTime:datetime
++endTime:datetime
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>36</x><y>693</y><w>189</w><h>135</h></coordinates><panel_attributes>Payment
 --
-+paymentID:long
-+order:long
++paymentId (PK):long
++bookingId (FK):long
 +amount:int
 +method:String
 +paymentTime:datetime
-+status:String
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>81</x><y>541</y><w>189</w><h>72</h></coordinates><panel_attributes>Session_tag
++status:Enum
++comment:String
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>198</x><y>261</y><w>189</w><h>72</h></coordinates><panel_attributes>Session_category
 --
-+photoID:long
-+categoryID:long
---</panel_attributes><additional_attributes></additional_attributes></element></diagram>
++photoId (FK):long
++categoryId (FK):long
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>918</x><y>270</y><w>189</w><h>72</h></coordinates><panel_attributes>Photo_style
+--
++photoId (FK):long
++styleId (FK):long
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>531</x><y>261</y><w>189</w><h>72</h></coordinates><panel_attributes>Session_style
+--
++photoId (FK):long
++styleId (FK):long
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>531</x><y>90</y><w>189</w><h>90</h></coordinates><panel_attributes>Category
+--
+categoryId (PK):long
+name:String
+description:String
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>909</x><y>90</y><w>189</w><h>90</h></coordinates><panel_attributes>Style
+--
+styleId (PK):long
+name:String
+description:String
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>936</y><w>189</w><h>81</h></coordinates><panel_attributes>BookingItem
+--
++bookingId (FK):long
++sessionId (FK):long
++comment:String
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>819</x><y>540</y><w>45</w><h>153</h></coordinates><panel_attributes>lt=&lt;&lt;-
+m1=0..n
+m2=1</panel_attributes><additional_attributes>10;10;10;150</additional_attributes></element><element><id>Relation</id><coordinates><x>900</x><y>495</y><w>216</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=0..n
+m2=1</panel_attributes><additional_attributes>220;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>549</x><y>486</y><w>225</w><h>45</h></coordinates><panel_attributes>lt=-
+m1=0..n
+m2=1
+&lt; provide</panel_attributes><additional_attributes>10;20;230;20</additional_attributes></element><element><id>Relation</id><coordinates><x>279</x><y>324</y><w>171</w><h>108</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1..n
+&lt; has</panel_attributes><additional_attributes>160;100;160;60;10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>477</x><y>324</y><w>180</w><h>108</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1..n
+has to &gt;</panel_attributes><additional_attributes>10;100;10;60;160;60;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>999</x><y>333</y><w>180</w><h>126</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1..n
+&lt; has</panel_attributes><additional_attributes>170;120;170;70;10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1206</x><y>333</y><w>162</w><h>126</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1..n
+has &gt;</panel_attributes><additional_attributes>10;120;10;70;140;70;140;10</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>171</y><w>342</w><h>108</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1..n
+include to &gt;</panel_attributes><additional_attributes>350;10;350;60;10;60;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>171</y><w>378</w><h>108</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1..n
+include to &gt;</panel_attributes><additional_attributes>390;10;390;60;10;60;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>999</x><y>171</y><w>90</w><h>117</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1..n
+include to &gt;</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>603</x><y>27</y><w>756</w><h>261</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1..n
+include &gt;</panel_attributes><additional_attributes>10;70;10;20;800;20;800;270</additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>738</y><w>216</w><h>45</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=0..n
+&lt; create</panel_attributes><additional_attributes>220;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>441</x><y>810</y><w>45</w><h>144</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1..n
+m2=1</panel_attributes><additional_attributes>10;140;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>216</x><y>747</y><w>162</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;160;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>36</x><y>558</y><w>189</w><h>99</h></coordinates><panel_attributes>Review
+--
+reviewId (PK):String
+bookingId (FK):String
+reviewText:String
+rating:int
+create_time:datetime</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>216</x><y>594</y><w>162</w><h>144</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;80;10;80;130;160;130</additional_attributes></element><element><id>Relation</id><coordinates><x>441</x><y>567</y><w>45</w><h>144</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=0..n
+m2=1..n</panel_attributes><additional_attributes>10;140;10;10</additional_attributes></element></diagram>
